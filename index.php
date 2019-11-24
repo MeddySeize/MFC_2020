@@ -20,30 +20,9 @@
  <body>
      <!--La navigation qui est collée en de la page. elle est constituée de 4 éléments: Accueil, A propos, Insc/Co,Contact.
     Elle permet de rendre à la section demandée.-->
-
-    <nav class="navbar navbar-expand-md navbar-dark bg-transparent">
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collide2">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a href="#" class="nav-link">LOGO</a>
-          </li>
-        </ul>
-      </div>
-      <div class="mx-auto order-0">
-        <a href="" class="navbar-brand mx-auto"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a href="" class="nav-link">Connexion</a>
-          </li>
-
-        </ul>
-      </div>
-    </nav>
+    <?php
+    include 'navbar.php'
+    ?>
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
      <h1>Bienvenue sur MFC</h1>
