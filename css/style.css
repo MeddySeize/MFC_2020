@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #333;
+    color: black;
+    line-height: 1.6;
+    height: 100vh;
+}
+/* LES POLICES */
+/* Elles sont enregistrées localement dans le fichier "Font"*/
+@font-face{
+    font-family: 'TitleFont';
+    src: url("/Font/Bungee/BungeeLine.eot");
+    src: url("/Font/Bungee/BungeeLine.woff2") format('woff2'),
+         url("/Font/Bungee/BungeeLine.woff") format('woff'),
+         url("/Font/Bungee/BungeeLine.ttf") format('truetype');
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'ParagFont';
+    src: url("/Font/Roboto/Roboto-Regular.eot");
+    src: url("/Font/Roboto/Roboto-Regular.woff2") format('woff2'),
+         url("/Font/Roboto/Roboto-Regular.woff") format('woff'),
+         url("/Font/Roboto/Roboto-Regular.ttf") format('truetype');
+    font-style: normal;
+}
+
+@keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+   }
+/*SHOWROOM*/
+/*Accueil MFC*/
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+/*Barre de Navigation*/
+
+/*
+@media (min-width: 768px) {
+    .navbar-brand.abs
+        {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            text-align: center;
+        }
+    }
+/*
+.navbar{
+    top: 0;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background: none;
+    text-align: center;
+    margin: 0 auto;
+}
+
+nav ul{
+    display: flex;
+    list-style:none;
+    width: 100%;
+    justify-content: center;
+    z-index: 2;
+
+}
+
+.navbar ul li{
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.navbar ul li a:hover{
+    color: skyblue;
+}
+
+/*
+body>.login_form>form{
+    background-color: black;
+}
+.login_form{
+    background: black;
+    color: #ffffff;
+}
+
+/*.nav-right{
+    float: right;
+    margin-left:200px;
+    color:whitesmoke;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    list-style: none;
+}*/
+/* LES SECTIONS */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+section h1{
+    font-size: 4rem;
+    font-family: 'TitleFont', cursive;
+}
+
+section p{
+    font-size: 1.5rem;
+    font-family: 'ParagFont', cursive;
+    /*border:  3px red solid; */
+}
+
+
+section#Accueil{
+    background: url(/Images/Geom.png) no-repeat center center/cover;
+}
+
+section#Info {
+    background: url('/Images/poing.png') no-repeat center center/cover;
+}
+
+section#Contact {
+    background: url('/Images/Portablesetfilles.png') no-repeat center center/cover;
+}
+
+section .button{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    border: black 1px solid;
+    padding: 10px 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 8%;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 0px;
+    text-align: center;
+  }
+.goodalert{
+    padding: 20px;
+    background-color:green; /* Red */
+    color: white;
+    margin-bottom: 0px;
+    text-align: center;
+}
