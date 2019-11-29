@@ -131,7 +131,7 @@ section p{
 
 
 section#Accueil{
-    background: url(/Images/Geom.png) no-repeat center center/cover;
+    background: url('/Images/Geom.png') no-repeat center center/cover;
 }
 
 section#Info {

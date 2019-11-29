@@ -2,14 +2,11 @@
 <html>
  <head>
    <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
   <!-- META -->
   <meta charset="UTF-8"/>
    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--POLICES-->
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- FICHIERS JAVASCRIPT -->
   <script type="text/javascript" src="js/jquery-331.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -21,7 +18,7 @@
      <!--La navigation qui est collée en de la page. elle est constituée de 4 éléments: Accueil, A propos, Insc/Co,Contact.
     Elle permet de rendre à la section demandée.-->
     <?php
-    include 'navbar.php'
+    include 'navbar.php';
     ?>
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
