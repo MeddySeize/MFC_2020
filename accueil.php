@@ -37,7 +37,7 @@
                 <h1>Dev</h1>
              </div>
          </div>
-         <div class="box2">
+         <div class="box2" >
             <div class="content">
                 <h1>Bureau</h1>
             </div>
@@ -50,12 +50,16 @@
      </div>
      <div class="col-xl-12 my-auto">
            <div class="Htitle">
-              <h2 style="text-align: center;">Nos Dernière formations</h1>
+              <h2 style="text-align: center;">Nos dernières formations</h1>
             </div>
         </div>
+    <div class="card">
+        <h5 class="card-header">Lorem ipsum dolor</h5>
+        <div class="card-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
+        </div>
+        </div>
+    </div>
+    </div>
  </div>
-
-
-
-
  </body>

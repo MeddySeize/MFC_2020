@@ -20,6 +20,7 @@
     <?php
     include 'navbar.php';
     ?>
+
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
      <h1>Bienvenue sur MFC</h1>

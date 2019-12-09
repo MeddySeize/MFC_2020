@@ -10,33 +10,50 @@ body{
 .Htitle{
     margin: 40px;
 }
-.box1 {
-    width: 250px;
-    height: 250px;
-    margin: auto;
+/* vv Simplifier ce truc vv */
+.box1{
+    padding: 20px;
     background-color: red;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: auto;
 }
 
-.box2 {
-    width: 250px;
-    height: 250px;
-    margin: auto;
+.box2{
+    padding: 20px;
     background-color: blue;
-}
-
-.box3 {
-    width: 250px;
-    height: 250px;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
     margin: auto;
-    background-color: green;
-
 }
 
+.box3{
+    padding: 20px;
+    background-color: green;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+
+.box1:hover{
+    transform: scale(1.5);
+}
+.box2:hover{
+    transform: scale(1.5);
+}
+.box3:hover{
+    transform: scale(1.5);
+}
 .content{
     text-align: center;
     margin-top: 90px;
     color: white;
 }
+/*^^ Simplifier ce truc ^^ */
 
 /*Header style */
 
