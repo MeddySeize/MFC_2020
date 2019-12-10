@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="css/bootstrap.css">
+   <!--FICHIERS CSS 
+  <link rel="stylesheet" href="css/bootstrap.css">-->
   <link rel="stylesheet" href="css/style.css">
   <!-- META -->
   <meta charset="UTF-8"/>
@@ -18,7 +18,7 @@
      <!--La navigation qui est collée en de la page. elle est constituée de 4 éléments: Accueil, A propos, Insc/Co,Contact.
     Elle permet de rendre à la section demandée.-->
     <?php
-    include 'navbar.php';
+    include 'element/header.php';
     ?>
 
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->

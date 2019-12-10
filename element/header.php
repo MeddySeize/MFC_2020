@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="/css/bootstrap.css">
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collide2">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a href="index.php" class="nav-link">LOGO</a>
+            <a href="/index.php" class="nav-link">LOGO</a>
           </li>
         </ul>
       </div>
@@ -15,7 +16,7 @@
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a href="./element/connexion.php" class="nav-link">CONNEXION</a>
+            <a href="element/connexion.php" class="nav-link">CONNEXION</a>
           </li>
         </ul>
       </div>

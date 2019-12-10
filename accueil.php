@@ -2,7 +2,6 @@
 <html>
  <head>
    <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.css">
   <link rel="stylesheet" href="/css/style2.css">
   <!-- META -->
   <meta charset="UTF-8"/>
@@ -20,7 +19,7 @@
  <body>
 <!--Inclusion de la navbar -->
  <?php 
- include 'navbar.php';
+ include 'element/header.php';
  ?>
 
  <div class="container">
