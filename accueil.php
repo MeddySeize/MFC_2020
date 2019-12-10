@@ -20,7 +20,7 @@
  <body>
 <!--Inclusion de la navbar -->
  <?php 
- include 'navbar.php';
+ include 'header.php';
  ?>
 
  <div class="container">
