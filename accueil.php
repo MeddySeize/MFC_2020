@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<?php
+    include 'element/header.php';
+?> 
  <head>
    <!--FICHIERS CSS -->
   <link rel="stylesheet" href="/css/style2.css">
@@ -18,10 +21,6 @@
 
  <body>
 <!--Inclusion de la navbar -->
- <?php 
- include 'element/header.php';
- ?>
-
  <div class="container">
      <div class="row h-100">
          <div class="col-xl-12 my-auto">

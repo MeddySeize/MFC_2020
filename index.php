@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
+<!--La barre de nav est au dessus de la balise head car elle contient bootstrap-->
+<?php
+//la mettre en dessous du head transforme toute la page en bootstrap, ce qui dérègle le front
+    include 'element/header.php';
+?>
  <head>
-   <!--FICHIERS CSS 
-  <link rel="stylesheet" href="css/bootstrap.css">-->
+   <!--FICHIERS CSS -->
   <link rel="stylesheet" href="css/style.css">
   <!-- META -->
   <meta charset="UTF-8"/>
@@ -17,12 +21,10 @@
  <body>
      <!--La navigation qui est collée en de la page. elle est constituée de 4 éléments: Accueil, A propos, Insc/Co,Contact.
     Elle permet de rendre à la section demandée.-->
-    <?php
-    include 'element/header.php';
-    ?>
 
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
+      
      <h1>Bienvenue sur MFC</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis.
     Nullam tincidunt risus a felis tincidunt. </p>
