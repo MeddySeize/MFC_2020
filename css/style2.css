@@ -10,7 +10,7 @@ body{
 .Htitle{
     margin: 40px;
 }
-/* vv Simplifier ce truc vv */
+
 .box1{
     padding: 20px;
     background-color: red;
@@ -38,7 +38,6 @@ body{
     margin: auto;
 }
 
-
 .box1:hover{
     transform: scale(1.5);
 }
@@ -52,6 +51,10 @@ body{
     text-align: center;
     margin-top: 90px;
     color: white;
+}
+.card{
+    margin-top: 3%;
+
 }
 /*^^ Simplifier ce truc ^^ */
 

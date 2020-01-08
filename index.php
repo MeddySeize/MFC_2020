@@ -24,7 +24,6 @@
 
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
-      
      <h1>Bienvenue sur MFC</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis.
     Nullam tincidunt risus a felis tincidunt. </p>

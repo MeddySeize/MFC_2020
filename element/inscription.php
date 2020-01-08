@@ -1,8 +1,4 @@
-<?php 
-include 'header.php';
-?>
-<div class="col-md-12">
-  <form action="check_inscription.php" method="post">			
+<form action="check_inscription.php" method="post">			
   <div class="form-group">
     <label for="nom">Nom</label>
     <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom" required>
@@ -25,7 +21,4 @@ include 'header.php';
   </div>
   
   <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi">
-  
-  </form>
-
-  </div>
+</form>
