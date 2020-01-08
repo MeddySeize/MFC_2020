@@ -30,34 +30,48 @@
          </div>
      </div>
      <div class="row">
+    
          <div class="box1">
+         <a href = "catalog.php">
              <div class="content">
                 <h1>Dev</h1>
              </div>
+        </a>
          </div>
+
          <div class="box2" >
+         <a href = "catalog.php?cat=dev">
             <div class="content">
                 <h1>Bureau</h1>
             </div>
+        </a>
          </div>
+
          <div class="box3">
+         <a href = "index.php">
             <div class="content">
                 <h1>Réseau</h1>
             </div>
+        </a>
          </div>
+    </a>
      </div>
      <div class="col-xl-12 my-auto">
            <div class="Htitle">
               <h2 style="text-align: center;">Nos dernières formations</h1>
             </div>
-        </div>
     <div class="card">
-        <h5 class="card-header">Lorem ipsum dolor</h5>
+      <h5 class="card-header">Lorem ipsum dolor</h5>
         <div class="card-body">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
         </div>
+    </div>
+    <div class="card">
+      <h5 class="card-header">Lorem ipsum dolor</h5>
+        <div class="card-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
         </div>
     </div>
     </div>
- </div>
+</div>
  </body>
