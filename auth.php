@@ -21,9 +21,11 @@ include 'element/header.php';
  <div class="col-xl-2">
  </div>
    <div class="col-xl-4">
+   
    <div class="Htitle">
      <h1 style="text-align: center;">Connexion</h1>
    </div>
+   <hr>
       <?php
       include 'element/connexion.php';
     ?>
@@ -32,6 +34,7 @@ include 'element/header.php';
    <div class="Htitle">
      <h1 style="text-align: center;">Inscription</h1>
    </div>
+   <hr>
      <?php
       include 'element/inscription.php';
      ?> 
