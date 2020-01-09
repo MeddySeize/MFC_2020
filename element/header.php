@@ -16,7 +16,7 @@
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a href="element/connexion.php" class="nav-link">CONNEXION</a>
+            <a href="auth.php" class="nav-link">CONNEXION/INSCRIPTION</a>
           </li>
         </ul>
       </div>
