@@ -14,16 +14,24 @@ include 'element/header.php';
   <script type="text/javascript" src="js/jquery-331.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <!-- TITRE -->
-  <title>Maison de la Formation Continue</title>
+  <title>Connexion/Inscription</title>
  </head>
  <body>
  <div class="row">
-   <div class="col-xl-5">
-    <?php
-      include 'element/connexion.php';
-    ?> 
+ <div class="col-xl-2">
+ </div>
+   <div class="col-xl-4">
+   <div class="Htitle">
+     <h1 style="text-align: center;">Connexion</h1>
    </div>
-   <div class="col-xl-5">
+      <?php
+      include 'element/connexion.php';
+    ?>
+   </div>
+   <div class="col-xl-4">
+   <div class="Htitle">
+     <h1 style="text-align: center;">Inscription</h1>
+   </div>
      <?php
       include 'element/inscription.php';
      ?> 
