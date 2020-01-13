@@ -17,7 +17,7 @@ $req = $db->query('SELECT * from apprenant where usr_email = "'.$_POST['mail'].'
 //Si il y en a pas alors il entre les informations dans la bdd et met un message positif.
 if ( $req == 0)
     {
-     echo "CiO97pUTR";
+  
     $cmd = "INSERT INTO Apprenant (usr_id, usr_nom, usr_prenom, usr_email, usr_telephone, usr_passe)
     VALUES (NULL, '$nom', '$prenom', '$mail', '$tel', '$passwd')";
     $res= $db->query($cmd);
@@ -31,7 +31,7 @@ if ($req !=0 and !empty($_POST['mail']))
 
     if ($req =! 0 and $_POST['conf'] != $_POST['passwd'])
     {
-        header("Location:../auth.php?badconf=true");
+        header("Location:../auth.php?badConf=true");
     }
 
 
