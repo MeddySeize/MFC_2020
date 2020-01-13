@@ -27,5 +27,11 @@ elseif(isset($_GET['badID'])==true){
   echo $mess;
 }
 }
+//Fonction pour changer le header(Barre de navigation) et mettre une preuve de connexion de l'utilisateur(Bonjour *pseudo*)
+function hello(){
+  if(!isset($_SESSION['logged']) == true){
+  echo  "<li class='nav-item active'><a href='auth.php' class='nav-link'>CONNEXION/INSCRIPTION</a></li>";
+  }
 
+}
 ?>
