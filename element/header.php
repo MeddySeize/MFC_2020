@@ -2,8 +2,11 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collide2">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a href="/index.php" class="nav-link">LOGO</a>
+          </li>
+          <li class="nav-item active">
+            <a href="accueil.php" class="nav-link">ACCUEIL</a>
           </li>
         </ul>
       </div>
