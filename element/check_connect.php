@@ -1,8 +1,8 @@
 <?php 
  //connexion
     session_start();
-    include('db_connect.php');
 //Ajout des infos de la base de donnée
+    include('db_connect.php');
     $_SESSION["is_logged"] = FALSE;
 //Par défaut, il y a pas de personne connectée
     $email = (isset($_POST["mail"]))? $_POST["mail"] : "";
@@ -18,13 +18,12 @@
     if ($data['nbr'])
     {
         $_SESSION["is_logged"] = true;
-       
-        echo "Vous êtes connecté";
+        header("Location:../accueil.php");
     }
 //Sinon on lui met un message d'erreur.
     else
     {
-        echo "vous n'êtes pas connecté";
+        header("Location:../auth.php?badID=true");
     }
 
 ?>
