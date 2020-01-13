@@ -1,7 +1,7 @@
 <?php 
 include 'element/header.php';
 include 'fonc/fonctions.php';
-
+//Fonctions qui met des notifications liées à la connexion et inscription
 checkStatutAuth();
 ?>
  <head>
