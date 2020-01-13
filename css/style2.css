@@ -79,14 +79,14 @@ hr{
 
 .alert {
     padding: 20px;
-    background-color: #f44336; /* Red */
+    background-color: red;
     color: white;
     margin-bottom: 0px;
     text-align: center;
   }
 .goodalert{
     padding: 20px;
-    background-color:green; /* Red */
+    background-color:green; 
     color: white;
     margin-bottom: 0px;
     text-align: center;
