@@ -1,5 +1,8 @@
 <?php 
 include 'element/header.php';
+include 'fonc/fonctions.php';
+
+checkStatutAuth();
 ?>
  <head>
    <!--FICHIERS CSS -->
@@ -21,7 +24,6 @@ include 'element/header.php';
  <div class="col-xl-2">
  </div>
    <div class="col-xl-4">
-   
    <div class="Htitle">
      <h1 style="text-align: center;">Connexion</h1>
    </div>
