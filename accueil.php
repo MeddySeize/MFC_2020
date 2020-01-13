@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-    include 'element/header.php';
+  include 'element/header.php';
 ?> 
  <head>
    <!--FICHIERS CSS -->
@@ -40,7 +40,7 @@
          </div>
 
          <div class="box2" >
-         <a href = "catalog.php?cat=dev">
+         <a href = "catalog.php">
             <div class="content">
                 <h1>Bureau</h1>
             </div>
@@ -48,7 +48,7 @@
          </div>
 
          <div class="box3">
-         <a href = "index.php">
+         <a href = "catalog.php">
             <div class="content">
                 <h1>Réseau</h1>
             </div>
