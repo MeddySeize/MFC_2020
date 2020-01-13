@@ -1,4 +1,4 @@
- <form action="check_connect.php" method="post">			
+ <form action="element/check_connect.php" method="post">			
   <div class="form-group">
     <label for="mail">Email</label>
     <input type="text" class="form-control" id="mail" name="mail" placeholder="Mail">
