@@ -1,6 +1,6 @@
 <?php 
-include 'element/header.php';
-include 'fonc/fonctions.php';
+require 'element/header.php';
+include_once 'fonc/fonctions.php';
 //Fonctions qui met des notifications liées à la connexion et inscription
 checkStatutAuth();
 ?>
@@ -13,12 +13,13 @@ checkStatutAuth();
   <!--POLICES-->
   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <!-- FICHIERS JAVASCRIPT -->
-  <script type="text/javascript" src="js/jquery-331.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <!-- FICHIERS JAVASCRIPT-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script> 
   <!-- TITRE -->
   <title>Connexion/Inscription</title>
  </head>
+ 
  <body>
  <div class="row">
  <div class="col-xl-2">
