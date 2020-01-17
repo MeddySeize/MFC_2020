@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-  include 'element/header.php';
+ include 'element/header.php';
 ?> 
  <head>
    <!--FICHIERS CSS -->
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!-- FICHIERS JAVASCRIPT -->
-  <script type="text/javascript" src="js/jquery-331.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <!-- TITRE -->
   <title>Maison de la Formation Continue</title>

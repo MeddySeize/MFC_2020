@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 <!--La barre de nav est au dessus de la balise head car elle contient bootstrap-->
 <?php
@@ -12,16 +13,13 @@
   <meta charset="UTF-8"/>
    <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- FICHIERS JAVASCRIPT -->
-  <script type="text/javascript" src="js/jquery-331.min.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <!-- TITRE -->
   <title>Maison de la Formation Continue</title>
  </head>
 
  <body>
-     <!--La navigation qui est collée en de la page. elle est constituée de 4 éléments: Accueil, A propos, Insc/Co,Contact.
-    Elle permet de rendre à la section demandée.-->
-
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
      <h1>Bienvenue sur MFC</h1>
