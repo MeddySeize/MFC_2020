@@ -3,7 +3,7 @@
                                /* Fonctions Liées à la connexion et l'inscription*/
                               /**************************************************/
 
-//Cette fonction permet d'afficher des notifications selon les entrée de l'utilisateur 
+//Cette fonction permet d'afficher des notifications selon les entrée de l'utilisateur
 function checkStatutAuth(){
 //Si l'utilisateur utilise un email déjà existant dans la base de données, il mettra un message d'erreur:
 if(isset($_GET['taken'])==true)
@@ -22,16 +22,10 @@ elseif(isset($_GET['created'])==true){
   $mess ="<div class='goodalert'>Vous êtes inscrit! Vous pouvez maintenant vous connecter.</div>";
   echo $mess;
 }
+//Si le 
 elseif(isset($_GET['badID'])==true){
-  $mess ="<div class='alert'>L'adresse e-mail ou le mot de passe est incorrecte. Merci de réessayer</div>";
+  $mess ="<div class='alert'>L'adresse e-mail ou le mot de passe est incorrect. Merci de réessayer</div>";
   echo $mess;
 }
-}
-//Fonction pour changer le header(Barre de navigation) et mettre une preuve de connexion de l'utilisateur(Bonjour *pseudo*)
-function hello(){
-  if(!isset($_SESSION['logged']) == true){
-  echo  "<li class='nav-item active'><a href='auth.php' class='nav-link'>CONNEXION/INSCRIPTION</a></li>";
-  }
-
 }
 ?>
