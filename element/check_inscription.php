@@ -18,8 +18,8 @@ $req = $db->query('SELECT * from apprenant where usr_email = "'.$_POST['mail'].'
 if ( $req == 0)
     {
   
-    $cmd = "INSERT INTO Apprenant (usr_id, usr_nom, usr_prenom, usr_email, usr_telephone, usr_passe)
-    VALUES (NULL, '$nom', '$prenom', '$mail', '$tel', '$passwd')";
+    $cmd = "INSERT INTO Apprenant (usr_id, usr_nom, usr_prenom, usr_email, usr_telephone, usr_passe, usr_type)
+    VALUES (NULL, '$nom', '$prenom', '$mail', '$tel', '$passwd', 0)";
     $res= $db->query($cmd);
     header("Location:../auth.php?created=true");
     }
