@@ -2,62 +2,46 @@
 <html>
 <?php
     include 'element/header.php';
+    require 'fonc/fonctions.php';
+    $Formation = getFormation($_GET['id']);
 ?> 
- <head>
-   <!--FICHIERS CSS -->
+<head>
+  <!--FICHIERS CSS -->
   <link rel="stylesheet" href="/css/style2.css">
   <!-- META -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--POLICES-->
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <!-- FICHIERS JAVASCRIPT -->
-  <script type="text/javascript" src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <!-- TITRE -->
-  <title>Maison de la Formation Continue</title>
- </head>
+  <title>Catalogue de formation</title>
+</head>
 
- <body>
- <div class="container">
- 
-   <a href="accueil.php" style="font-color: black">
-    <button type="button" class="btn btn-outline-secondary"> << Revenir </button>
-   <a>
+<body>
+  <div class="container">
+    <a href="accueil.php" style="font-color: black">
+     <button type="button" class="btn btn-outline-secondary"> << Revenir </button>
+    <a>
+  
 
-     <div class="col-xl-12 my-auto">
-         <div class="Htitle">
-         <!--Faire code php pour remplacer le nom catégorie avec celle correspondante-->
-            <h1 style="text-align: center;">Nom de Catégorie</h1>
-         </div>
-     </div>
-
-     <div class="col-xl-12 my-auto">
+  <div class="col-xl-12 my-auto">
+    <?php 
+      getnomCateg()
+    ?>
+  </div>
+ <hr>
+  <?php
+    foreach($Formation as $line){ // affiche chaque formation qu'il y a dans la catégorie correspondante
+  ?>
+  <div class="col-xl-12 my-auto">
+    <!-- Mettre Php ici-->
     <div class="card">
-      <h5 class="card-header">Lorem ipsum dolor</h5>
-        <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
-        </div>
+      <h5 class="card-header"><?php echo($line['form_nom']); ?></h5>
+      <div class="card-body">
+        <?php echo($line['form_desc']); ?>
+      </div>
     </div>
-    <div class="card">
-      <h5 class="card-header">Lorem ipsum dolor</h5>
-        <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
-        </div>
-    </div>
-    <div class="card">
-      <h5 class="card-header">Lorem ipsum dolor</h5>
-        <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
-        </div>
-    </div>
-    <div class="card">
-      <h5 class="card-header">Lorem ipsum dolor</h5>
-        <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
-        </div>
-    </div>
-    </div>
- </div>
+  </div>
+  <?php
+  }
+?>
+  </div>
 </body>
