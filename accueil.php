@@ -26,13 +26,15 @@
          <div class="col-xl-12 my-auto">
             <div class="Htitle">
                 <h1 style="text-align: center;">Catalogue de Formation</h1>
+                <hr>
             </div>
+           
          </div>
      </div>
      <div class="row">
     
          <div class="box1">
-         <a href = "catalog.php">
+         <a href = "catalog.php?id=5">
              <div class="content">
                 <h1>Dev</h1>
              </div>
@@ -40,7 +42,7 @@
          </div>
 
          <div class="box2" >
-         <a href = "catalog.php">
+         <a href = "catalog.php?id=6">
             <div class="content">
                 <h1>Bureau</h1>
             </div>
@@ -48,18 +50,18 @@
          </div>
 
          <div class="box3">
-         <a href = "catalog.php">
+         <a href = "catalog.php?id=4">
             <div class="content">
                 <h1>Réseau</h1>
             </div>
         </a>
          </div>
-    </a>
      </div>
      <div class="col-xl-12 my-auto">
            <div class="Htitle">
               <h2 style="text-align: center;">Nos dernières formations</h1>
             </div>
+        <hr>
     <div class="card">
       <h5 class="card-header">Lorem ipsum dolor</h5>
         <div class="card-body">
