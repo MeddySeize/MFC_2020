@@ -32,7 +32,6 @@
     foreach($Formation as $line){ // affiche chaque formation qu'il y a dans la catégorie correspondante
   ?>
   <div class="col-xl-12 my-auto">
-    <!-- Mettre Php ici-->
     <div class="card">
       <h5 class="card-header"><?php echo($line['form_nom']); ?></h5>
       <div class="card-body">
