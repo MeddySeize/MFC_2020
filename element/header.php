@@ -2,7 +2,7 @@
 <?php
     session_start();
     if(isset($_SESSION['type'])){
-        if($_SESSION['type'] == 0){
+        if($_SESSION['type'] == 0){ //Statut d'apprenant
             echo('<nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="navbar-collapse collapse w-100 order-1-md-0 dual-collide2">
                 <ul class="navbar-nav mr-auto">
@@ -33,7 +33,7 @@
         </nav>
         ');
         }
-        elseif($_SESSION['type'] == 1){
+        elseif($_SESSION['type'] == 1){ //Statut ADMIN
           echo('<nav class="navbar navbar-expand-md navbar-dark bg-dark">
           <div class="navbar-collapse collapse w-100 order-1-md-0 dual-collide2">
               <ul class="navbar-nav mr-auto">
@@ -54,7 +54,7 @@
           <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                      <a href="/auth.php" class="nav-link">ADMIN </a>
+                      <a href="/auth.php" class="nav-link" style="color: red">ADMIN </a>
                   </li>
                   <li class="nav-item active">
                       <a href="element/deconnexion.php" class="nav-link">| Déconnexion |</a>
@@ -65,7 +65,7 @@
       ');
         }
     }
-    else{
+    else{ // Header par défault
         echo('<nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1-md-0 dual-collide2">
             <ul class="navbar-nav mr-auto">
