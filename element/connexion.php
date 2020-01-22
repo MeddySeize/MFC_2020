@@ -7,7 +7,7 @@
     <label for="passwd">Mot de passe</label>
     <input type="password" class="form-control" id="conPasswd" name="conPasswd" placeholder="Mot de passe">
   </div>
-  <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi" value="Se connecter">
   </form>
   <br><br>
 

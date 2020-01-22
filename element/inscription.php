@@ -23,5 +23,5 @@
     <label for="passwd">Confirmation</label>
     <input type="password" class="form-control" id="conf" name="conf" placeholder="Retapez votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
   </div>
-  <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi" value = "S'inscrire">
 </form>
