@@ -25,10 +25,8 @@
      <div class="row h-100">
          <div class="col-xl-12 my-auto">
             <div class="Htitle">
-                <h1 style="text-align: center;">Catalogue de Formation</h1>
-                <hr>
+                <h1 style="text-align: center;">Bienvenue!</h1>
             </div>
-           
          </div>
      </div>
      <div class="row">
@@ -61,7 +59,7 @@
            <div class="Htitle">
               <h2 style="text-align: center;">Nos dernières formations</h1>
             </div>
-        <hr>
+  
     <div class="card">
       <h5 class="card-header">Lorem ipsum dolor</h5>
         <div class="card-body">
