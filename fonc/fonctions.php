@@ -34,13 +34,21 @@ elseif(isset($_GET['badID'])==true){
                                /*   Fonctions Liées au catalogue de formation    */
                               /**************************************************/
 //Cette fonction recherche la categ selon la page et les formations validées dans la BDD. Puis les mets dans un tableau. 
- function getFormation($idCateg){
+ function getCategFrm($idCateg){
     require($_SERVER['DOCUMENT_ROOT'].'/element/db_connect.php');
     $cmd = "SELECT * FROM formation WHERE form_cat = $idCateg AND form_statut = 1";
     $res = $db->query($cmd);
-    $tableFrm = $res->fetchAll();
-    return $tableFrm;
+    $categFrm = $res->fetchAll();
+    return $categFrm;
  }             
+//Cette fonction récupère toute les formations qui ont été validée dans la BDD. Puis le stock dans un tableau
+ function getAllFrm(){
+  require($_SERVER['DOCUMENT_ROOT'].'/element/db_connect.php');
+  $cmd = "SELECT * FROM formation WHERE form_statut = 1";
+    $res = $db->query($cmd);
+    $allFrm = $res->fetchAll();
+    return $allFrm;
+ }
  // Affiche le titre de la catégorie selon l'idée de la page / à simplifier:
  function getnomCateg(){
    if($_GET['id']== 4){
