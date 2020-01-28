@@ -26,7 +26,7 @@
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a href="/auth.php" class="nav-link" style="color: aqua">Bienvenue '.$_SESSION['name'].'!</a>
+                        <a href="/profil.php" class="nav-link" style="color: aqua">Bienvenue '.$_SESSION['name'].'!</a>
                     </li>
                     <li class="nav-item active">
                         <a href="element/deconnexion.php" class="nav-link">| Déconnexion |</a>
