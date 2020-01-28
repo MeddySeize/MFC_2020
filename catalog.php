@@ -24,7 +24,9 @@
      <button type="button" class="btn btn-outline-secondary"> << Revenir </button>
     <a>
   
-
+  <!---------------------------------------------------------------------->
+  <!--        Cette partie du code affiche toutes les formations        -->
+  <!---------------------------------------------------------------------->
   <div class="col-xl-12 my-auto">
   <?php
   if(isset($_GET['id'])== FALSE){
@@ -47,8 +49,9 @@
   }
   else{
 ?>
-
+  <!---------------------------------------------------------------------->
   <!--Cette partie du code correspond au catalogue filtré par catégorie -->
+  <!---------------------------------------------------------------------->
     <?php 
       getnomCateg()
     ?>
@@ -71,3 +74,4 @@
 ?>
   </div>
 </body>
+</html>
