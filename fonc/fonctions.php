@@ -71,4 +71,15 @@ elseif(isset($_GET['badID'])==true){
    }
  }
 
+                                /**************************************************/
+                               /*  Fonctions Liées a la gestion des utilisateurs */
+                              /**************************************************/
+ 
 
+function getUser($IdUtilisateur){
+  require($_SERVER['DOCUMENT_ROOT'].'/element/db_connect.php');
+  $cmd = "SELECT usr_ID, usr_nom, user_prenom, user_email, usr_telephone FROM apprenant WHERE usr_ID = $IdUtilisateur";
+    $res = $db->query($cmd);
+    $userInf = $res->fetchAll();
+    return $userInf;
+}
