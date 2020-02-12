@@ -29,6 +29,7 @@
   <!---------------------------------------------------------------------->
   <div class="col-xl-12 my-auto">
   <?php
+  //Si il n'y a pas d'ID dans l'adresse, alors affiche toutes les formations
   if(isset($_GET['id'])== FALSE){
   ?>
     <div class="Htitle">
@@ -47,6 +48,7 @@
 <?php
    }
   }
+  //Si l'id est présent dans l'adresse, affiche les formations selon leurs ID de catégorie
   else{
 ?>
   <!---------------------------------------------------------------------->

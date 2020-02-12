@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-
-<html>
-<!--La barre de nav est au dessus de la balise head car elle contient bootstrap-->
 <?php
+//La barre de nav est au dessus de la balise head car elle contient bootstrap
 //la mettre en dessous du head transforme toute la page en bootstrap, ce qui dérègle le front
     include 'element/header.php';
 ?>
@@ -40,4 +37,3 @@
     Nullam tincidunt risus a felis tincidunt, nec consequat eros ultricies. Curabitur sit amet maximus diam</p>
     </section>
  </body>
-</html>

@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/bootstrap.css">
 <?php
+//Affiche différente barre de navigation selon la personne connectée
     session_start();
     if(isset($_SESSION['type'])){
         if($_SESSION['type'] == 0){ //Statut APPRENANT
@@ -57,7 +58,7 @@
           <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                      <a href="/auth.php" class="nav-link" style="color: red">ADMIN </a>
+                      <a href="/profil.php" class="nav-link" style="color: red">ADMIN </a>
                   </li>
                   <li class="nav-item active">
                       <a href="element/deconnexion.php" class="nav-link">| Déconnexion |</a>
