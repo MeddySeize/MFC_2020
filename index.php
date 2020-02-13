@@ -1,11 +1,12 @@
 <?php
 //La barre de nav est au dessus de la balise head car elle contient bootstrap
 //la mettre en dessous du head transforme toute la page en bootstrap, ce qui dérègle le front
-    include 'element/header.php';
+    include 'header.php';
 ?>
  <head>
    <!--FICHIERS CSS -->
   <link rel="stylesheet" href="css/style.css">
+  
   <!-- META -->
   <meta charset="UTF-8"/>
    <meta name="viewport" content="width=device-width, initial-scale=1">

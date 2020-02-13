@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-    include 'element/header.php';
+    include 'header.php';
     require 'fonc/fonctions.php';
     $allFrm = getAllFrm();
     if(isset($_GET['id'])){ //Si une variable id existe (dans l'adresse) alors on appelle la fonction getCategFrm
@@ -10,7 +10,7 @@
 ?> 
 <head>
   <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="/css/style2.css">
+  <link rel="stylesheet" href="css/style2.css">
   <!-- META -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">

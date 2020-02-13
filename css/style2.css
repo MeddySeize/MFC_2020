@@ -11,6 +11,10 @@ body{
     margin: 40px;
 }
 
+.vl{
+    border-left: 6px solid;
+    height: 500px;
+}
 
 /*vv Simplifier ce truc vv */
 .box1{
@@ -94,19 +98,19 @@ hr{
 
 @font-face{
     font-family: 'TitleFont';
-    src: url("/Font/Bungee/BungeeLine.eot");
-    src: url("/Font/Bungee/BungeeLine.woff2") format('woff2'),
-         url("/Font/Bungee/BungeeLine.woff") format('woff'),
-         url("/Font/Bungee/BungeeLine.ttf") format('truetype');
+    src: url("BungeeLine.eot");
+    src: url("BungeeLine.woff2") format('woff2'),
+         url("BungeeLine.woff") format('woff'),
+         url("BungeeLine.ttf") format('truetype');
     font-style: normal;
 }
 
 @font-face{
     font-family: 'ParagFont';
-    src: url("/Font/Roboto/Roboto-Regular.eot");
-    src: url("/Font/Roboto/Roboto-Regular.woff2") format('woff2'),
-         url("/Font/Roboto/Roboto-Regular.woff") format('woff'),
-         url("/Font/Roboto/Roboto-Regular.ttf") format('truetype');
+    src: url("Roboto-Regular.eot");
+    src: url("Roboto-Regular.woff2") format('woff2'),
+         url("Roboto-Regular.woff") format('woff'),
+         url("Roboto-Regular.ttf") format('truetype');
     font-style: normal;
 }
 /*Menu sur le coté style */

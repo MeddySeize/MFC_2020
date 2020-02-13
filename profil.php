@@ -1,11 +1,11 @@
 <?php
- include 'element/header.php';
+ include 'header.php';
  require 'fonc/fonctions.php';
  $userInf = getUser($_SESSION['id']);
 ?> 
  <head>
    <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="/css/style2.css">
+  <link rel="stylesheet" href="css/style2.css">
   <!-- META -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,13 +32,17 @@
             <a class="nav-link active" data-toggle="tab" href="#profil">Vos informations personnelles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#historique">Historique des paiements</a>
+        <a class="nav-link"  data-toggle="tab" href="#modifMdp">Modifier votre mot de passe</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#historique">Historique des paiements</a>
+        </li>    
     </ul>
  <!--Panneau de la navigation-->
  <?php
     foreach($userInf as $uLine){
   ?>
+  <!--Changement des informations -->
     <div class="tab-content">
       <div id="profil" class="col-xl-6 tab-pane active">
         <h1>Modifier votre profil</h1>
@@ -62,11 +66,24 @@
         </div>
         <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi" value = "Enregistrer les modifications">
         </form>
-        <div class="vl"></div>
       </div>
+      <div id="modifMdp" class="col-xl-6 tab-pane fade">
+        <h1>Modifier votre mot de passe</h1>
+        <br>
+        <form action="">
+        <div class="form-group">
+        <label for="passwd">Mot de passe</label>
+        <input type="password" class="form-control" id="passwd" name="passwd" placeholder="Entrez votre nouveau mot de passe à 8 caractères" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </div>  
+        <div class="form-group">
+        <label for="passwd">Confirmation</label>
+        <input type="password" class="form-control" id="conf" name="conf" placeholder="Retapez votre nouveau mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </div>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi" value = "Enregistrer les modifications">
+          </form>
+        </div>
         <div id="historique" class="container tab-pane fade">
-            <h3>home</h3>
-            <p>Hello</p>
+            
         </div>  
     </div>
   <?php

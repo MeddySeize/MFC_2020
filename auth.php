@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="../css/bootstrap.css">
 <?php 
-require 'element/header.php';
-include_once 'fonc/fonctions.php';
+require './header.php';
+include_once './fonc/fonctions.php';
 //Fonctions qui met des notifications liées à la connexion et inscription
 checkStatutAuth();
 ?>
  <head>
    <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="/css/style2.css">
+  <link rel="stylesheet" href="css/style2.css">
   <!-- META -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +31,7 @@ checkStatutAuth();
    </div>
    <hr>
       <?php
-      include 'element/connexion.php';
+      include './element/connexion.php';
     ?>
    </div>
    <div class="col-xl-4">
@@ -39,7 +40,7 @@ checkStatutAuth();
    </div>
    <hr>
      <?php
-      include 'element/inscription.php';
+      include './element/inscription.php';
      ?> 
    </div>
 </div>

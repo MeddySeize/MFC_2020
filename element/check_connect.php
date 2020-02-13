@@ -2,7 +2,7 @@
  //Creation de la session
     session_start();
 //Ajout des infos de la base de donnée
-    require_once 'db_connect.php';
+    require_once '../fonc/db_connect.php';
     //Par défaut, il y a pas de personne connectée.
     $_SESSION["logged"] = FALSE;
 //Désigner les éléments du formulaire de connexion. ici "conMail" et "conPasswd" sont les cases à remplir dans le formulaire

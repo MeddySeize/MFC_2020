@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <?php
- include 'element/header.php';
+ include 'header.php';
+ require 'fonc/fonctions.php';
+ $lastFrm = getLastFrm();
 ?> 
  <head>
    <!--FICHIERS CSS -->
-  <link rel="stylesheet" href="/css/style2.css">
+  <link rel="stylesheet" href="css/style2.css">
   <!-- META -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,19 +61,18 @@
            <div class="Htitle">
               <h2 style="text-align: center;">Nos dernières formations</h1>
             </div>
-  
+    <?php
+      foreach($lastFrm as $lLine){
+    ?>
     <div class="card">
-      <h5 class="card-header">Lorem ipsum dolor</h5>
+      <h5 class="card-header"><?php echo($lLine['form_nom']);?></h5>
         <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
+          <?php echo($lLine['form_desc']); ?>
         </div>
     </div>
-    <div class="card">
-      <h5 class="card-header">Lorem ipsum dolor</h5>
-        <div class="card-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis. Nullam tincidunt risus a felis tincidunt.
-        </div>
+    <?php
+      }
+    ?>
     </div>
     </div>
-</div>
  </body>

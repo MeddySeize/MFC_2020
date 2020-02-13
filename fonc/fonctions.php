@@ -1,4 +1,5 @@
 <?php
+require('db_connect.php');
                                 /**************************************************/
                                /* Fonctions Liées à la connexion et l'inscription*/
                               /**************************************************/
@@ -35,7 +36,7 @@ elseif(isset($_GET['badID'])==true){
                               /**************************************************/
 //Cette fonction recherche la categ selon la page et les formations validées dans la BDD. Puis les mets dans un tableau. 
  function getCategFrm($idCateg){
-    require($_SERVER['DOCUMENT_ROOT'].'/element/db_connect.php');
+   require('db_connect.php');
     $cmd = "SELECT * FROM formation WHERE form_cat = $idCateg AND form_statut = 1";
     $res = $db->query($cmd);
     $categFrm = $res->fetchAll();
@@ -43,7 +44,7 @@ elseif(isset($_GET['badID'])==true){
  }             
 //Cette fonction récupère toute les formations qui ont été validée dans la BDD. Puis le stock dans un tableau
  function getAllFrm(){
-  require($_SERVER['DOCUMENT_ROOT'].'/element/db_connect.php');
+  require('db_connect.php');
   $cmd = "SELECT * FROM formation WHERE form_statut = 1";
     $res = $db->query($cmd);
     $allFrm = $res->fetchAll();
@@ -71,13 +72,21 @@ elseif(isset($_GET['badID'])==true){
    }
  }
 
+ function getLastFrm(){
+  require('db_connect.php');
+  $cmd = "SELECT * FROM `formation` ORDER BY `form_ID` DESC LIMIT 2";
+  $res = $db->query($cmd);
+  $lastFrm = $res->fetchall();
+  return $lastFrm;
+ }
+
                                 /**************************************************/
                                /*  Fonctions Liées a la gestion des utilisateurs */
                               /**************************************************/
  
 //Cherche les informations de l'utilisateur connecté et les mets dans un tableau
 function getUser($IdUtilisateur){
-  require($_SERVER['DOCUMENT_ROOT'].'/element/db_connect.php');
+  require('db_connect.php');
   $cmd = "SELECT usr_ID, usr_nom, usr_prenom, usr_email, usr_telephone FROM apprenant WHERE usr_ID = $IdUtilisateur";
   $res = $db->query($cmd);
   $userInf = $res->fetchAll();

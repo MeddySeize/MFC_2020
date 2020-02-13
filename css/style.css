@@ -14,19 +14,20 @@ body{
 /* Elles sont enregistrées localement dans le fichier "Font"*/
 @font-face{
     font-family: 'TitleFont';
-    src: url("/Font/Bungee/BungeeLine.eot");
-    src: url("/Font/Bungee/BungeeLine.woff2") format('woff2'),
-         url("/Font/Bungee/BungeeLine.woff") format('woff'),
-         url("/Font/Bungee/BungeeLine.ttf") format('truetype');
+    src: url("../font/BungeeLine.eot");
+    src: url("../font/BungeeLine.woff2") format('woff2'),
+         url("BungeeLine.woff") format('woff'),
+         url("BungeeLine.ttf") format('truetype');
     font-style: normal;
 }
 
+
 @font-face{
     font-family: 'ParagFont';
-    src: url("/Font/Roboto/Roboto-Regular.eot");
-    src: url("/Font/Roboto/Roboto-Regular.woff2") format('woff2'),
-         url("/Font/Roboto/Roboto-Regular.woff") format('woff'),
-         url("/Font/Roboto/Roboto-Regular.ttf") format('truetype');
+    src: url("Roboto-Regular.eot");
+    src: url("../font/Roboto-Regular.woff2") format('woff2'),
+         url("Roboto-Regular.woff") format('woff'),
+         url("Roboto-Regular.ttf") format('truetype');
     font-style: normal;
 }
 
@@ -131,15 +132,15 @@ section p{
 
 
 section#Accueil{
-    background: url('/Images/Geom.png') no-repeat center center/cover;
+    background: url('../image/Geom.png') no-repeat center center/cover;
 }
 
 section#Info {
-    background: url('/Images/poing.png') no-repeat center center/cover;
+    background: url('../image/poing.png') no-repeat center center/cover;
 }
 
 section#Contact {
-    background: url('/Images/Portablesetfilles.png') no-repeat center center/cover;
+    background: url('../image/Portablesetfilles.png') no-repeat center center/cover;
 }
 
 section .button{
