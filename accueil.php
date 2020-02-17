@@ -68,7 +68,7 @@
       <h5 class="card-header"><?php echo($lLine['form_nom']);?></h5>
         <div class="card-body">
           <?php echo($lLine['form_desc']); ?>
-        </div>
+        </div>   
     </div>
     <?php
       }

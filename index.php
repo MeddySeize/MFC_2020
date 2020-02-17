@@ -21,20 +21,18 @@
     <!--Représente chaque compartiment de la page Ex: Bienvenue sur MFC, MFC,Nous Contacter-->
     <section id="Accueil">
      <h1>Bienvenue sur MFC</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis.
-    Nullam tincidunt risus a felis tincidunt. </p>
-       <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+    <p>Avec une équipe de 80 formateurs et consultants à votre service</p>
+       <p><strong>Quelle que soit votre ambition, MFC peut vous aider à bâtir votre avenir.</strong></p>
        <a href="accueil.php" class="button">Voir nos Formations</a>
      </section>
      <section id="Info">
-     <h1>MFC, Formation pour tous</h1>
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis.
-    Nullam tincidunt risus a felis tincidunt, nec consequat eros ultricies. Curabitur sit amet maximus diam</p>
+     <h1>MFC, la voie de la connaissance</h1>
+     <p>MFC est une plateforme en ligne offrant des parcours diplômants et professionnalisants à plus de trois millions d'étudiants  à travers le monde.</p>
     <a href="PageFormation.php" class="button">En savoir plus</a>
     </section>
     <section id="Contact">
     <h1>Nous Contacter</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur suscipit felis eget sapien vehicula convallis.
-    Nullam tincidunt risus a felis tincidunt, nec consequat eros ultricies. Curabitur sit amet maximus diam</p>
+    <p>MFC met tout en œuvre pour répondre à vos questions et satisfaire vos demandes.</p>
+    <a href="" class="button">Contact</a>
     </section>
  </body>
