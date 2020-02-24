@@ -1,9 +1,10 @@
-<link rel="stylesheet" href="../css/bootstrap.css">
+<!DOCTYPE html>
+<html>
 <?php 
 require './header.php';
 include_once './fonc/fonctions.php';
 //Fonctions qui met des notifications liées à la connexion et inscription
-checkStatutAuth();
+checkStatusAuth();
 ?>
  <head>
    <!--FICHIERS CSS -->
@@ -22,10 +23,11 @@ checkStatutAuth();
  </head>
  
  <body>
+ <div class="container">
  <div class="row">
- <div class="col-xl-2">
+ <div class="col-xl-1">
  </div>
-   <div class="col-xl-4">
+   <div class="col-xl-5">
    <div class="Htitle">
      <h1 style="text-align: center;">Connexion</h1>
    </div>
@@ -34,7 +36,7 @@ checkStatutAuth();
       include './element/connexion.php';
     ?>
    </div>
-   <div class="col-xl-4">
+   <div class="col-xl-5">
    <div class="Htitle">
      <h1 style="text-align: center;">Inscription</h1>
    </div>
@@ -44,4 +46,6 @@ checkStatutAuth();
      ?> 
    </div>
 </div>
+</div>
 </body>
+</html>

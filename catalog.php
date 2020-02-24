@@ -4,7 +4,8 @@
     include 'header.php';
     require 'fonc/fonctions.php';
     $allFrm = getAllFrm();
-    if(isset($_GET['id'])){ //Si une variable id existe (dans l'adresse) alors on appelle la fonction getCategFrm
+    //Si une variable id existe (dans l'adresse) alors on appelle la fonction getCategFrm
+    if(isset($_GET['id'])){ 
     $categFrm = getCategFrm($_GET['id']);
     }
 ?> 
@@ -20,10 +21,6 @@
 
 <body>
   <div class="container">
-    <a href="accueil.php" style="font-color: black">
-     <button type="button" class="btn btn-outline-secondary"> << Revenir </button>
-    <a>
-  
   <!---------------------------------------------------------------------->
   <!--        Cette partie du code affiche toutes les formations        -->
   <!---------------------------------------------------------------------->
@@ -44,6 +41,7 @@
       <div class="card-body">
         <?php echo($aLine['form_desc']); ?>
       </div>
+      <a href="details.php?idFrm=<?php echo($aLine['form_ID'])?>" class="btn btn-primary">Consulter</a>
     </div>
 <?php
    }
@@ -55,7 +53,7 @@
   <!--Cette partie du code correspond au catalogue filtré par catégorie -->
   <!---------------------------------------------------------------------->
     <?php 
-      getnomCateg()
+      getnameCateg()
     ?>
   </div>
  <hr>
@@ -68,6 +66,7 @@
       <div class="card-body">
         <?php echo($cLine['form_desc']); ?>
       </div>
+      <a href="details.php?idFrm=<?php echo($cLine['form_ID'])?>" class="btn btn-primary">Consulter</a>
     </div>
   </div>
   <?php

@@ -17,6 +17,11 @@ body{
 }
 
 /*vv Simplifier ce truc vv */
+.box{
+    border: 10px solid black;
+    width: 200px;
+    height: 200px;
+}
 .box1{
     padding: 20px;
     background-color: red;

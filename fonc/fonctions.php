@@ -5,7 +5,7 @@ require('db_connect.php');
                               /**************************************************/
 
 //Cette fonction permet d'afficher des notifications selon les entrée de l'utilisateur
-function checkStatutAuth(){
+function checkStatusAuth(){
 //Si l'utilisateur utilise un email déjà existant dans la base de données, il mettra un message d'erreur:
 if(isset($_GET['taken'])==true)
 {
@@ -31,6 +31,7 @@ elseif(isset($_GET['badID'])==true){
 }
 
 
+
                                 /**************************************************/
                                /*   Fonctions Liées au catalogue de formation    */
                               /**************************************************/
@@ -51,7 +52,7 @@ elseif(isset($_GET['badID'])==true){
     return $allFrm;
  }
  // Affiche le titre de la catégorie selon l'idée de la page / à simplifier:
- function getnomCateg(){
+ function getnameCateg(){
    if($_GET['id']== 4){
     echo('<div class="Htitle">
           <h1 style="text-align: center; color: green">Réseau</h1>
@@ -71,10 +72,18 @@ elseif(isset($_GET['badID'])==true){
       ');
    }
  }
-
+//Sélectionne les dernières formation créées et les affiches sur l'accueil
  function getLastFrm(){
   require('db_connect.php');
-  $cmd = "SELECT * FROM `formation` ORDER BY `form_ID` DESC LIMIT 2";
+  $cmd = "SELECT * FROM `formation` ORDER BY form_ID DESC LIMIT 2";
+  $res = $db->query($cmd);
+  $lastFrm = $res->fetchall();
+  return $lastFrm;
+ }
+
+ function getFrmDetails($idFrm){
+  require('db_connect.php');
+  $cmd = "SELECT * FROM `formation` WHERE form_ID = $idFrm";
   $res = $db->query($cmd);
   $lastFrm = $res->fetchall();
   return $lastFrm;

@@ -3,6 +3,7 @@
  require 'fonc/fonctions.php';
  $userInf = getUser($_SESSION['id']);
 ?> 
+
  <head>
    <!--FICHIERS CSS -->
   <link rel="stylesheet" href="css/style2.css">
@@ -27,16 +28,13 @@
   </div>
   <div class="col-xl-12">
  <!--onglet de navigation-->
-    <ul class="nav nav-tabs">
+ <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#profil">Vos informations personnelles</a>
         </li>
         <li class="nav-item">
         <a class="nav-link"  data-toggle="tab" href="#modifMdp">Modifier votre mot de passe</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#historique">Historique des paiements</a>
-        </li>    
+        </li> 
     </ul>
  <!--Panneau de la navigation-->
  <?php
@@ -88,6 +86,6 @@
     </div>
   <?php
     }
-  ?>
+  ?>  
   </div>
  </body>

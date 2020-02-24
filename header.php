@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./css/bootstrap.css">
 <?php
-//require($_SERVER['DOCUMENT_ROOT'].'/MFC2020Local/css/bootstrap.css');
+//require($_SERVER['DOCUMENT_ROOT'].'/css/bootstrap.css');
 //Affiche différente barre de navigation selon la personne connectée
     session_start();
     if(isset($_SESSION['type'])){

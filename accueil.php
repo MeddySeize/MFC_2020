@@ -32,7 +32,6 @@
          </div>
      </div>
      <div class="row">
-    
          <div class="box1">
          <a href = "catalog.php?id=5">
              <div class="content">
@@ -69,6 +68,7 @@
         <div class="card-body">
           <?php echo($lLine['form_desc']); ?>
         </div>   
+        <a href="details.php?idFrm=<?php echo($lLine['form_ID'])?>" class="btn btn-primary">Consulter</a>
     </div>
     <?php
       }
