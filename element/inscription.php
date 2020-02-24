@@ -1,4 +1,4 @@
-<form action="element/check_inscription.php" method="post">	
+<form action="fonc/fonctions.php" method="post">	
 <div class="form-group">
     <label for="prenom">Prénom</label>
     <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom" required>
@@ -23,5 +23,5 @@
     <label for="passwd">Confirmation</label>
     <input type="password" class="form-control" id="conf" name="conf" placeholder="Retapez votre mot de passe" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
   </div>
-  <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoi" value = "S'inscrire">
+  <input type="submit" class="btn btn-primary btn-lg btn-block" name="envoiInsc" value = "S'inscrire">
 </form>
