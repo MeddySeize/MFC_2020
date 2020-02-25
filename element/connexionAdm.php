@@ -1,6 +1,6 @@
-<form action="fonc/fonctions.php" method="post">			
+<form class="form-signing" action="fonc/fonctions.php" method="post">			
   <div class="form-group">
-    <label for="mail">Email</label>
+    <label for="mail">Login</label>
     <input type="text" class="form-control" id="loginAdm" name="loginAdm" placeholder="Votre login">
   </div>
   <div class="form-group">
