@@ -1,8 +1,14 @@
+<?php 
+  include './fonc/fonctions.php';
+  //Fonctions qui met des notifications liées à la connexion et inscription
+  checkStatusAuth();
+?>
 <!DOCTYPE html>
 <html>
 <head>
    <!--FICHIERS CSS -->
   <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="./css/bootstrap.css">
   <!-- META -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +22,17 @@
   <title>Maison de la Formation Continue</title>
 </head>
 
-<body>
-    
+<body class="text-center">
+<div class="Htitle">
+     <h1 style="text-align: center;">Back Office</h1>
+</div>
+<?php
+if(isset($_SESSION['logged']) != true){
+  include './element/connexionAdm.php';
+}
+
+?>
+</div>
+  </div>
 </body>
 </html>

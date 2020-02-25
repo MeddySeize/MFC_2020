@@ -35,12 +35,12 @@ require('db_connect.php');
 if(isset($_POST['envoiInsc']))
 {
 //assigner les cases du formulaire à une variable
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$mail = $_POST['mail'];
-$tel = $_POST['tel'];
-$passwd = $_POST['passwd'];
-$conf = $_POST['conf'];
+$nom = htmlspecialchars($_POST['nom']);
+$prenom = htmlspecialchars($_POST['prenom']);
+$mail = htmlspecialchars($_POST['mail']);
+$tel = htmlspecialchars($_POST['tel']);
+$passwd = htmlspecialchars($_POST['passwd']);
+$conf = htmlspecialchars($_POST['conf']);
 }
 //Vérifie sur la bdd si il y a déjà une personne avec le même email. 
 $req = $db->query('SELECT * from apprenant where usr_email = "'.$_POST['mail'].'"')->rowCount();
@@ -75,8 +75,8 @@ require('db_connect.php');
 //Par défaut, il y a pas de personne connectée.
   $_SESSION["logged"] = FALSE;
 //Désigner les éléments du formulaire de connexion. ici "conMail" et "conPasswd" sont les cases à remplir dans le formulaire
-  $email = (isset($_POST["conMail"]))? $_POST["conMail"] : "";
-  $password = (isset($_POST["conPasswd"]))? $_POST["conPasswd"] : "";
+  $email = htmlspecialchars(isset($_POST["conMail"]))? $_POST["conMail"] : "";
+  $password = htmlspecialchars(isset($_POST["conPasswd"]))? $_POST["conPasswd"] : "";
 //"nbr" est booléen. Si les identifiants existent, Il sera à 1. sinon 0.
   $cmd = "SELECT * FROM Apprenant WHERE usr_email = ? AND usr_passe = ? ;";
 //Si nbr est à 1 alors on assigne les infos de la base de données au compte de l'utilisateur
@@ -99,11 +99,48 @@ require('db_connect.php');
     header("Location:../auth.php?badID=true");
   }
 }
+function conAdm(){
+  //Creation de la session
+  session_unset();
+  session_start();
+  //Ajout des infos de la base de donnée
+  require('db_connect.php');
+  //Par défaut, il y a pas de personne connectée.
+    $_SESSION["logged"] = FALSE;
+  //Désigner les éléments du formulaire de connexion. ici "conMail" et "conPasswd" sont les cases à remplir dans le formulaire
+    $login = htmlspecialchars(isset($_POST["loginAdm"]))? $_POST["loginAdm"] : "";
+    $password = htmlspecialchars(isset($_POST["passwdAdm"]))? $_POST["passwdAdm"] : "";
+  //"nbr" est booléen. Si les identifiants existent, Il sera à 1. sinon 0.
+    $cmd = "SELECT * FROM gestionnaire WHERE gest_login = ? AND gest_passe = ? ;";
+  //Si nbr est à 1 alors on assigne les infos de la base de données au compte de l'utilisateur
+    $res = $db->prepare($cmd);
+    $res->execute(array($login, $password));
+    $cnt = $res->rowCount(); 
+    if ($cnt == 1)
+    {
+      $data = $res->fetch();
+      $_SESSION['logged'] = true;
+      $_SESSION['admId'] = $data['gest_ID'];
+      $_SESSION['admType'] = $data['gest_type'];
+      $_SESSION['admPseudo'] = $data['gest_login'];
+      if($_SESSION['admType'] == 0){
+      header("Location:../adminOffice.php?admFrm=true");
+      }
+    }
+  //Sinon on lui met un message d'erreur.
+  else
+  {
+    header("Location:../adminOffice.php?badID=true");
+  }
+}
 if(isset($_POST['envoiCon'])){
   conUti();
 }
 if(isset($_POST['envoiInsc'])){
   inscUti();
+}
+if(isset($_POST['envoiAdm'])){
+  conAdm();
 }
 //=========================================================================================================================================================================
 
