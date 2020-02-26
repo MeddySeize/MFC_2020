@@ -30,7 +30,9 @@
 if(isset($_SESSION['logged']) != true){
   include './element/connexionAdm.php';
 }
-
+elseif(isset($_GET['admFrm']) == true){
+  include './element/inscription.php';
+}
 ?>
 </div>
   </div>

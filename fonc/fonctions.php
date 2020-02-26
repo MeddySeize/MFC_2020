@@ -54,13 +54,14 @@ if ( $req == 0)
     $res= $db->query($cmd);
     header("Location:../auth.php?created=true");
     }
-// Si il existe au moins une personne, il reste sur la page et il met un message d'erreur.
+// Si il existe au moins une personne, il reste sur la page et il met un message d'erreur. 
+//TODO: Régler les conditions, 
 if ($req !=0 and !empty($_POST['mail']))
     {
         header("Location:../auth.php?taken=true");
     }
 
-    if ($req =! 0 and $_POST['conf'] != $_POST['passwd'])
+    if ($req == 0 and $_POST['conf'] != $_POST['passwd'])
     {
         header("Location:../auth.php?badConf=true");
     }
