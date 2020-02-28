@@ -9,7 +9,7 @@
   </div>
   <div class="form-group">
     <label for="mail">Email</label>
-    <input type="email" class="form-control" id="mail" name="mail" placeholder="name@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <input type="email" class="form-control" id="mail" name="mail" placeholder="name@example.com" pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})" required>
   </div>
   <div class="form-group">
     <label for="tel">Téléphone</label>
