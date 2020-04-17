@@ -1,11 +1,10 @@
 <?php
-require('db_connect.php');
                                 /**************************************************/
                                /* Fonctions Liées à la connexion et l'inscription*/
                               /**************************************************/
 
 //Cette fonction permet d'afficher des notifications selon les entrée de l'utilisateur
-function checkStatusAuth(){
+function notification(){
 //Si l'utilisateur utilise un email déjà existant dans la base de données, il mettra un message d'erreur:
   if(isset($_GET['taken'])==true){
   $mess = "<div class='alert'> Cet e-mail est déjà pris. Merci de choisir un autre.</div>";
@@ -22,10 +21,22 @@ function checkStatusAuth(){
   echo $mess;
   }
 //Si les identifiants sont incorrectes, afficher un message d'erreur:
-elseif(isset($_GET['badID'])==true){
+  elseif(isset($_GET['badID'])==true){
   $mess ="<div class='alert'>L'adresse e-mail ou le mot de passe est incorrect. Merci de réessayer</div>";
   echo $mess;
   }
+  elseif(isset($_GET['updated'])==true){
+  $mess ="<div class='goodalert'>Votre compte à été modifié.</div>";
+  echo $mess;
+  }
+  elseif(isset($_GET['updatedpw'])==true){
+    $mess ="<div class='goodalert'>Votre mot de passe à été modifié.</div>";
+    echo $mess;
+    }
+    elseif(isset($_GET['badPasswd'])==true){
+      $mess ="<div class='alert'>Le mot de passe est incorrect. Merci de réessayer.</div>";
+      echo $mess;
+      }
 }
 //=========================================================================================================================================================================
 //L'action du formulaire d'inscription:
@@ -46,26 +57,26 @@ $conf = htmlspecialchars($_POST['conf']);
 $req = $db->query('SELECT * from apprenant where usr_email = "'.$_POST['mail'].'"')->rowCount();
 
 //Si il y en a pas alors il entre les informations dans la bdd et met un message positif.
-if ( $req == 0)
+if($req == 0)
     {
-  
-    $cmd = "INSERT INTO Apprenant (usr_id, usr_nom, usr_prenom, usr_email, usr_telephone, usr_passe, usr_type)
-    VALUES (NULL, '$nom', '$prenom', '$mail', '$tel', '$passwd', 0)";
+    $cmd = "INSERT INTO Apprenant (usr_id, usr_nom, usr_prenom, usr_email, usr_telephone, usr_passe)
+    VALUES (NULL, '$nom', '$prenom', '$mail', '$tel', '$passwd')";
     $res= $db->query($cmd);
     header("Location:../auth.php?created=true");
     }
 // Si il existe au moins une personne, il reste sur la page et il met un message d'erreur. 
-//TODO: Régler les conditions, 
-if ($req !=0 and !empty($_POST['mail']))
+//TODO: Régler les conditions
+elseif ($req != 0 and !empty($_POST['mail']))
     {
         header("Location:../auth.php?taken=true");
     }
 
-    if ($req == 0 and $_POST['conf'] != $_POST['passwd'])
+elseif($req != 0 and $_POST['conf'] != $_POST['passwd'])
     {
         header("Location:../auth.php?badConf=true");
     }
-}
+
+  }
 //=========================================================================================================================================================================
 //L'action du formulaire de connexion:
 function conUti(){
@@ -74,22 +85,21 @@ session_start();
 //Ajout des infos de la base de donnée
 require('db_connect.php');
 //Par défaut, il y a pas de personne connectée.
-  $_SESSION["logged"] = FALSE;
+  $_SESSION['logged'] = FALSE;
 //Désigner les éléments du formulaire de connexion. ici "conMail" et "conPasswd" sont les cases à remplir dans le formulaire
   $email = htmlspecialchars(isset($_POST["conMail"]))? $_POST["conMail"] : "";
   $password = htmlspecialchars(isset($_POST["conPasswd"]))? $_POST["conPasswd"] : "";
 //"nbr" est booléen. Si les identifiants existent, Il sera à 1. sinon 0.
-  $cmd = "SELECT * FROM Apprenant WHERE usr_email = ? AND usr_passe = ? ;";
+  $req = "SELECT * FROM Apprenant WHERE usr_email = ? AND usr_passe = ? ;";
 //Si nbr est à 1 alors on assigne les infos de la base de données au compte de l'utilisateur
-  $res = $db->prepare($cmd);
+  $res = $db->prepare($req);
   $res->execute(array($email, $password));
   $cnt = $res->rowCount(); 
   if ($cnt == 1)
   {
     $data = $res->fetch();
-    $_SESSION['logged'] = true;
+    $_SESSION['logged'] = TRUE;
     $_SESSION['id'] = $data['usr_ID'];
-    $_SESSION['type'] = $data['usr_type'];
     $_SESSION['name'] = $data['usr_prenom'];
   //et on le redirige vers l'accueil
     header("Location:../accueil.php");
@@ -107,14 +117,14 @@ function conAdm(){
   //Ajout des infos de la base de donnée
   require('db_connect.php');
   //Par défaut, il y a pas de personne connectée.
-    $_SESSION["logged"] = FALSE;
+    $_SESSION['logged'] = FALSE;
   //Désigner les éléments du formulaire de connexion. ici "conMail" et "conPasswd" sont les cases à remplir dans le formulaire
     $login = htmlspecialchars(isset($_POST["loginAdm"]))? $_POST["loginAdm"] : "";
     $password = htmlspecialchars(isset($_POST["passwdAdm"]))? $_POST["passwdAdm"] : "";
   //"nbr" est booléen. Si les identifiants existent, Il sera à 1. sinon 0.
-    $cmd = "SELECT * FROM gestionnaire WHERE gest_login = ? AND gest_passe = ? ;";
+    $req = "SELECT * FROM gestionnaire WHERE gest_login = ? AND gest_passe = ? ;";
   //Si nbr est à 1 alors on assigne les infos de la base de données au compte de l'utilisateur
-    $res = $db->prepare($cmd);
+    $res = $db->prepare($req);
     $res->execute(array($login, $password));
     $cnt = $res->rowCount(); 
     if ($cnt == 1)
@@ -124,7 +134,9 @@ function conAdm(){
       $_SESSION['admId'] = $data['gest_ID'];
       $_SESSION['admType'] = $data['gest_type'];
       $_SESSION['admPseudo'] = $data['gest_login'];
-      if($_SESSION['admType'] == 0){
+
+    if($_SESSION['admType'] == 0)
+      {
       header("Location:../adminOffice.php?admFrm=true");
       }
     }
@@ -152,8 +164,8 @@ if(isset($_POST['envoiAdm'])){
 //Cette fonction recherche la categ selon la page et les formations validées dans la BDD. Puis les mets dans un tableau. 
  function getCategFrm($idCateg){
    require('db_connect.php');
-    $cmd = "SELECT * FROM formation WHERE form_cat = $idCateg AND form_statut = 1";
-    $res = $db->query($cmd);
+    $req = "SELECT * FROM formation WHERE form_cat = $idCateg AND form_statut = 1";
+    $res = $db->query($req);
     $categFrm = $res->fetchAll();
     return $categFrm;
  }            
@@ -161,14 +173,14 @@ if(isset($_POST['envoiAdm'])){
 //Cette fonction récupère toute les formations qui ont été validée dans la BDD. Puis le stock dans un tableau
  function getAllFrm(){
   require('db_connect.php');
-  $cmd = "SELECT * FROM formation WHERE form_statut = 1";
-    $res = $db->query($cmd);
+  $req = "SELECT * FROM formation WHERE form_statut = 1";
+    $res = $db->query($req);
     $allFrm = $res->fetchAll();
     return $allFrm;
  }
  //=========================================================================================================================================================================
  // Affiche le titre de la catégorie selon l'idée de la page / à simplifier:
- function getnameCateg(){
+ function getNameCateg(){
    if($_GET['id']== 4){
     echo('<div class="Htitle">
           <h1 style="text-align: center; color: green">Réseau</h1>
@@ -192,18 +204,22 @@ if(isset($_POST['envoiAdm'])){
 //Sélectionne les dernières formation créées et les affiches sur l'accueil
  function getLastFrm(){
   require('db_connect.php');
-  $cmd = "SELECT * FROM `formation` ORDER BY form_ID DESC LIMIT 2";
-  $res = $db->query($cmd);
+  $req = "SELECT * FROM `formation` ORDER BY form_ID DESC LIMIT 2";
+  $res = $db->query($req);
   $lastFrm = $res->fetchall();
   return $lastFrm;
  }
 //=========================================================================================================================================================================
  function getFrmDetails($idFrm){
   require('db_connect.php');
-  $cmd = "SELECT * FROM `formation` WHERE form_ID = $idFrm";
-  $res = $db->query($cmd);
+  $req = "SELECT * FROM `formation` WHERE form_ID = $idFrm";
+  $res = $db->query($req);
   $lastFrm = $res->fetchall();
   return $lastFrm;
+ }
+ function inscFormation($IdUtilisateur, $idFormation){
+  require('db_connect.php');
+    
  }
 //=========================================================================================================================================================================
                                 /**************************************************/
@@ -213,14 +229,14 @@ if(isset($_POST['envoiAdm'])){
 //Cherche les informations de l'utilisateur connecté et les mets dans un tableau
 function getUser($IdUtilisateur){
   require('db_connect.php');
-  $cmd = "SELECT usr_ID, usr_nom, usr_prenom, usr_email, usr_telephone FROM apprenant WHERE usr_ID = $IdUtilisateur";
-  $res = $db->query($cmd);
-  $userInf = $res->fetchAll();
-  return $userInf;
+  $req = "SELECT usr_ID, usr_nom, usr_prenom, usr_email, usr_telephone FROM apprenant WHERE usr_ID = $IdUtilisateur;";
+  $res = $db->query($req);
+  $userInfo = $res->fetchAll();
+  return $userInfo;
 }
 
-function addFrm(){
-require('../fonc/db_connect.php');
+/*function addFrm(){
+require('db_connect.php');
 //Si le Bouton envoi est présent alors
 if(isset($_POST['envoi'])){
 //assigner les cases du formulaire à une variable
@@ -234,5 +250,51 @@ $cmd = "INSERT INTO formation(form_ID,form_nom, form_cat, form_desc, form_prix,f
 VALUES(NULL, '$nomForma','$categForma','$desc','$prixForma','$nivForma', 0)";
 $res=$db->query($cmd);
 
-header("Location:../profil.php?FormCrea=true");
+
+}
+*/
+//=========================================================================================================================================================================
+function updateUserinfo($IdUtilisateur){
+require('db_connect.php');
+//Si le Bouton envoi est présent alors
+//assigner les cases du formulaire à une variable
+ if(isset($_POST['majInfo'])){
+  $prenom = htmlspecialchars($_POST['prenom']);
+  $nom = htmlspecialchars($_POST['nom']);
+  $mail = htmlspecialchars($_POST['mail']);
+  $tel = htmlspecialchars($_POST['tel']);
+
+  $req = "UPDATE apprenant
+        SET usr_nom = '$nom', usr_prenom = '$prenom', usr_email = '$mail', usr_telephone = '$tel'
+        WHERE usr_ID = '$IdUtilisateur'";
+  $res = $db->query($req);
+  header('Location: profil.php?updated=true');
+  //TODO : Vérification sur email
+ }
+}
+function updateUserPsswd($IdUtilisateur){
+  require('db_connect.php');
+  //Si le Bouton envoi est présent alors
+  //assigner les cases du formulaire à une variable
+   if(isset($_POST['majPw'])){
+    $passwd = htmlspecialchars($_POST['passwd']);
+    $newPasswd = htmlspecialchars($_POST['newPasswd']);
+    $conf = htmlspecialchars($_POST['conf']);
+    
+    $verif = $db->query('SELECT * from apprenant WHERE usr_passe = "'.$passwd.'"')->rowCount();
+
+    if($verif == 1){
+      $req = "UPDATE apprenant
+        SET usr_passe = '$newPasswd'
+        WHERE usr_ID = '$IdUtilisateur'";
+        $res = $db->query($req);
+        header('Location: profil.php?updatedpw=true');
+    }
+    elseif($verif != 1){
+      header('Location: profil.php?badPasswd=true');
+    }
+    elseif($verif == 1 and $_POST['conf'] != $_POST['newPasswd']){
+      header('Location: profil.php?badConf=true');
+    }
+  }
 }
