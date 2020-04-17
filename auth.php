@@ -2,9 +2,9 @@
 <html>
 <?php 
 require './header.php';
-include_once './fonc/fonctions.php';
+require './fonc/fonctions.php';
 //Fonctions qui met des notifications liées à la connexion et inscription
-checkStatusAuth();
+notification();
 ?>
  <head>
    <!--FICHIERS CSS -->
