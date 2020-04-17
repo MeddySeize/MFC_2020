@@ -53,7 +53,7 @@
   <!--Cette partie du code correspond au catalogue filtré par catégorie -->
   <!---------------------------------------------------------------------->
     <?php 
-      getnameCateg()
+      getNameCateg()
     ?>
   </div>
  <hr>
