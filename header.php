@@ -1,10 +1,8 @@
 <link rel="stylesheet" href="./css/bootstrap.css">
 <?php
-//require($_SERVER['DOCUMENT_ROOT'].'/css/bootstrap.css');
 //Affiche différente barre de navigation selon la personne connectée
     session_start();
-    if(isset($_SESSION['type'])){
-        if($_SESSION['type'] == 0){ //Statut APPRENANT
+        if(isset($_SESSION['logged']) && ($_SESSION['logged'] == TRUE)){ //Statut APPRENANT
             echo('<nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="navbar-collapse collapse w-100 order-1-md-0 dual-collide2">
                 <ul class="navbar-nav mr-auto">
@@ -38,7 +36,6 @@
         </nav>
         ');
         }
-    }
     else{ // PAR DEFAUT
         echo('<nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="navbar-collapse collapse w-100 order-1-md-0 dual-collide2">
